@@ -1,0 +1,72 @@
+Tabela das falas:
+
+Id fala (chave)
+Id da ata
+Position
+Person id
+Text
+Initiatives
+Text Length
+Topic 1 -> Corrupção
+Prob Topic 1 -> 0.8
+Topic 2 -> Saúde
+Prob Topic 2 -> 0.1
+Topic 3 -> Null
+Prob Topic 3 -> Null
+Summary (Short text)
+PDF file name
+
+Tabela dos políticos:
+
+Person id (chave)
+Nome
+Party id
+
+Tabela dos partidos:
+
+Party id (chave)
+Nome
+Esquerda/direita -> bool
+Centro/Extremo -> bool
+
+Tabela das legislaturas:
+
+Id legislatura (periodo) (chave)
+Person id (chave)
+Party id
+
+Tabela dos Tópicos possíveis:
+
+Id topico (chave)
+Nome
+
+Tabela de atas:
+
+Id ata (chave)
+Transcript
+Date
+Topic 1 
+Prob Topic 1
+Topic 2
+Prob Topic 2 
+Topic 3
+Prob Topic 3
+Topic 4 
+Prob Topic 4 
+Topic 5
+Prob Topic 5 
+
+Fluxos:
+
+(Tema, período) -> Gráficos -> Resumos -> Ata
+
+Ata -> Resumo do(s) relator(es) para iniciativa(s) -> Resumo das principais falas na discussão de uma iniciativa
+
+Exemplo de utilização da sumarização:
+
+Saúde (data)
+
+Ata Z (dia XX/ZZZZ):
+    - Projeto de lei XYZ:
+        -> João da Silva defendeu ...
+        -> Maria foi a favor ...
